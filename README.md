@@ -1,0 +1,1 @@
+html lang=“en”> head> meta charset=“UTF-8”> meta name=“viewport” content=“width=device-width, initial-scale=1.0”> title>My Portfolio title> head> body> h1>Hi, I’m building my portfolio website. h1> p> p>Projects, skills, and contact info coming soon. p> body> html> 
