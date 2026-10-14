@@ -1,0 +1,1012 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bella Vista | Fine Dining Restaurant</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --gold: #d6ad60;
+  --dark: #111111;
+  --card: #1b1b1b;
+  --white: #ffffff;
+  --muted: #bdbdbd;
+}
+
+body {
+  background: var(--dark);
+  color: var(--white);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background: #090909;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  color: var(--gold);
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+.hero {
+  min-height: 520px;
+  padding: 80px 7%;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.3)),
+    url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=85")
+    center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(40px, 7vw, 76px);
+  line-height: 1.12;
+  margin: 18px 0;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 14px;
+}
+
+p {
+  color: var(--muted);
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  background: var(--gold);
+  color: #111;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 22px;
+}
+
+.btn:hover {
+  background: #f0ce88;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  margin-left: 8px;
+}
+
+section {
+  padding: 75px 7%;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 35px;
+}
+
+.section-heading p {
+  margin-top: 10px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature {
+  background: var(--card);
+  padding: 28px;
+  text-align: center;
+  border: 1px solid #303030;
+}
+
+.feature .icon {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  margin-bottom: 8px;
+  color: var(--gold);
+}
+
+.menu-section {
+  background: #151515;
+}
+
+.menu-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.menu-controls input {
+  width: min(100%, 320px);
+  padding: 12px 14px;
+  background: #222;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 4px;
+}
+
+.filter-btn {
+  background: #242424;
+  color: white;
+  border: 1px solid #444;
+  padding: 11px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.menu-card {
+  background: var(--card);
+  border: 1px solid #303030;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.menu-info {
+  padding: 19px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.menu-info h3 {
+  font-size: 19px;
+  margin-bottom: 6px;
+}
+
+.rating {
+  color: var(--gold);
+  font-size: 14px;
+  margin: 7px 0;
+}
+
+.menu-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.price {
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.add-btn {
+  border: none;
+  background: var(--gold);
+  color: #111;
+  padding: 10px 13px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.empty-message {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 30px;
+}
+
+.cart-box {
+  background: #202020;
+  border: 1px solid #3a3a3a;
+  padding: 25px;
+  max-width: 700px;
+  margin: 35px auto 0;
+  border-radius: 6px;
+}
+
+.cart-box h3 {
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #3b3b3b;
+  padding: 10px 0;
+}
+
+.cart-item button {
+  background: transparent;
+  border: 1px solid #777;
+  color: white;
+  padding: 5px 9px;
+  cursor: pointer;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  font-size: 20px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-grid img {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.about-grid p {
+  margin-top: 14px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.review {
+  padding: 25px;
+  background: var(--card);
+  border: 1px solid #303030;
+  border-radius: 5px;
+}
+
+.review .stars {
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.review h3 {
+  margin-top: 15px;
+  color: var(--gold);
+}
+
+.reservation {
+  background:
+    linear-gradient(rgba(0,0,0,.84), rgba(0,0,0,.84)),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+}
+
+.form {
+  max-width: 720px;
+  margin: 25px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #444;
+  background: #191919;
+  color: white;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.form textarea {
+  grid-column: 1 / -1;
+  min-height: 110px;
+}
+
+.form button {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.form-message {
+  grid-column: 1 / -1;
+  color: var(--gold);
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.contact-card {
+  background: var(--card);
+  padding: 25px 15px;
+  border: 1px solid #303030;
+}
+
+.contact-card h3 {
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+footer {
+  background: #080808;
+  border-top: 1px solid #333;
+  text-align: center;
+  padding: 30px 7%;
+}
+
+footer .logo {
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+@media (max-width: 850px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .features,
+  .review-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: 470px;
+    padding: 60px 6%;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 220px;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .form textarea,
+  .form button,
+  .form-message {
+    grid-column: 1;
+  }
+
+  .btn-outline {
+    margin-left: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Bella Vista.</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="eyebrow">Welcome to Bella Vista</span>
+    <h1>Good Food.<br><span class="gold">Beautiful Moments.</span></h1>
+    <p>
+      Discover delicious flavours, freshly prepared dishes and
+      an unforgettable dining experience for every occasion.
+    </p>
+    <a class="btn" href="#menu">Explore Our Menu</a>
+    <a class="btn btn-outline" href="#reservation">Reserve a Table</a>
+  </div>
+</section>
+
+<section>
+  <div class="section-heading">
+    <span class="eyebrow">The Bella Vista Experience</span>
+    <h2>Why Dine With Us?</h2>
+    <p>Great ingredients, warm hospitality and food made with care.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <div class="icon">🍽️</div>
+      <h3>Fresh Ingredients</h3>
+      <p>Quality ingredients and flavours in every dish.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">👨‍🍳</div>
+      <h3>Expert Chefs</h3>
+      <p>Carefully prepared meals inspired by global cuisine.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">✨</div>
+      <h3>Elegant Atmosphere</h3>
+      <p>A welcoming setting for family meals and special days.</p>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="section-heading">
+    <span class="eyebrow">Made With Love</span>
+    <h2>Our <span class="gold">Menu</span></h2>
+    <p>Explore our signature dishes, refreshing drinks and sweet desserts.</p>
+  </div>
+
+  <div class="menu-controls">
+    <input id="searchInput" type="search" placeholder="Search dishes..." aria-label="Search dishes">
+    <button class="filter-btn active" data-category="All">All</button>
+    <button class="filter-btn" data-category="Main Course">Main Course</button>
+    <button class="filter-btn" data-category="Pizza">Pizza</button>
+    <button class="filter-btn" data-category="Burgers">Burgers</button>
+    <button class="filter-btn" data-category="Desserts">Desserts</button>
+    <button class="filter-btn" data-category="Drinks">Drinks</button>
+  </div>
+
+  <div class="menu-grid" id="menuGrid"></div>
+
+  <div class="cart-box" id="cart">
+    <h3>🛒 Your Order</h3>
+    <div id="cartItems"><p>Your cart is empty. Add a dish from the menu!</p></div>
+    <div class="cart-total">
+      <strong>Total</strong>
+      <strong class="gold" id="cartTotal">Rs. 0</strong>
+    </div>
+    <button class="btn" id="orderBtn">Place Demo Order</button>
+    <p id="orderMessage" style="margin-top:12px;"></p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <img
+      src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=80"
+      alt="Elegant restaurant dining area"
+      loading="lazy"
+    >
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2>A Passion for <span class="gold">Great Food</span></h2>
+      <p>
+        Bella Vista was created around a simple idea: good food
+        brings people together. Our menu celebrates comforting
+        favourites and exciting flavours in one welcoming place.
+      </p>
+      <p>
+        Whether you are joining us for a casual lunch, a family
+        dinner or a celebration, we want every visit to feel special.
+      </p>
+      <a class="btn" href="#reservation">Plan Your Visit</a>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="menu-section">
+  <div class="section-heading">
+    <span class="eyebrow">A Taste of Bella Vista</span>
+    <h2>Food & <span class="gold">Ambience</span></h2>
+    <p>A glimpse of the dining experience we love to create.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80" alt="Freshly prepared food" loading="lazy">
+    <img src="https://images.unsplash.com/photo-157 pizza?auto=format&fit=crop&w=700&q=80" alt="Restaurant food selection" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80'">
+    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80" alt="Restaurant interior" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=80" alt="Pizza served fresh" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=700&q=80" alt="Delicious dessert" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=700&q=80" alt="Beautifully presented meal" loading="lazy">
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="section-heading">
+    <span class="eyebrow">Kind Words</span>
+    <h2>Guest <span class="gold">Reviews</span></h2>
+    <p>Example testimonials for this website demo.</p>
+  </div>
+
+  <div class="review-grid">
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>“Beautiful presentation and a menu with something for everyone.”</p>
+      <h3>Guest One</h3>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>“A lovely atmosphere for dinner with friends and family.”</p>
+      <h3>Guest Two</h3>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>“The perfect place to enjoy a relaxed and delicious meal.”</p>
+      <h3>Guest Three</h3>
+    </div>
+  </div>
+</section>
+
+<section class="reservation" id="reservation">
+  <div class="section-heading">
+    <span class="eyebrow">Your Table Awaits</span>
+    <h2>Reserve a <span class="gold">Table</span></h2>
+    <p>Fill in the form to preview a reservation request.</p>
+  </div>
+
+  <form class="form" id="reservationForm">
+    <input type="text" id="guestName" placeholder="Your full name" required>
+    <input type="email" id="guestEmail" placeholder="Your email address" required>
+    <input type="date" id="bookingDate" required>
+    <select id="bookingTime" required>
+      <option value="">Select a time</option>
+      <option>12:00 PM</option>
+      <option>1:00 PM</option>
+      <option>2:00 PM</option>
+      <option>6:00 PM</option>
+      <option>7:00 PM</option>
+      <option>8:00 PM</option>
+      <option>9:00 PM</option>
+    </select>
+    <select id="guestCount" required>
+      <option value="">Number of guests</option>
+      <option>1 guest</option>
+      <option>2 guests</option>
+      <option>3 guests</option>
+      <option>4 guests</option>
+      <option>5 guests</option>
+      <option>6 guests</option>
+      <option>7+ guests</option>
+    </select>
+    <textarea id="bookingNotes" placeholder="Special requests (optional)"></textarea>
+    <button class="btn" type="submit">Preview Reservation</button>
+    <p class="form-message" id="reservationMessage"></p>
+  </form>
+</section>
+
+<section id="contact">
+  <div class="section-heading">
+    <span class="eyebrow">Get In Touch</span>
+    <h2>Contact <span class="gold">Us</span></h2>
+    <p>Replace these demo details with your restaurant's real information.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>📍 Location</h3>
+      <p>Lahore, Pakistan</p>
+    </div>
+    <div class="contact-card">
+      <h3>📞 Phone</h3>
+      <p>+92 300 0000000</p>
+    </div>
+    <div class="contact-card">
+      <h3>🕒 Opening Hours</h3>
+      <p>Daily: 12 PM – 11 PM</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="logo">Bella Vista.</div>
+  <p>Good food. Beautiful moments.</p>
+  <p style="margin-top:12px;">© <span id="year"></span> Bella Vista Restaurant. Demo website.</p>
+</footer>
+
+<script>
+const dishes = [
+  {
+    id: 1,
+    name: "Grilled Chicken",
+    category: "Main Course",
+    price: 1299,
+    rating: "4.9",
+    description: "Juicy grilled chicken served with sides.",
+    image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 2,
+    name: "Chicken Alfredo Pasta",
+    category: "Main Course",
+    price: 999,
+    rating: "4.8",
+    description: "Creamy pasta with a rich, savoury sauce.",
+    image: "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 3,
+    name: "Classic Beef Burger",
+    category: "Burgers",
+    price: 799,
+    rating: "4.8",
+    description: "A classic burger with fresh toppings.",
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 4,
+    name: "Crispy Chicken Burger",
+    category: "Burgers",
+    price: 699,
+    rating: "4.7",
+    description: "Crispy chicken with lettuce and sauce.",
+    image: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 5,
+    name: "Margherita Pizza",
+    category: "Pizza",
+    price: 1099,
+    rating: "4.9",
+    description: "Classic pizza with cheese and tomato.",
+    image: "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 6,
+    name: "Pepperoni Pizza",
+    category: "Pizza",
+    price: 1499,
+    rating: "4.9",
+    description: "A flavourful pizza with a cheesy topping.",
+    image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 7,
+    name: "Chocolate Cake",
+    category: "Desserts",
+    price: 499,
+    rating: "4.8",
+    description: "Rich chocolate cake for a sweet finish.",
+    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 8,
+    name: "Cheesecake",
+    category: "Desserts",
+    price: 549,
+    rating: "4.7",
+    description: "Smooth and creamy cheesecake.",
+    image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 9,
+    name: "Fresh Lemonade",
+    category: "Drinks",
+    price: 249,
+    rating: "4.7",
+    description: "Refreshing lemonade served chilled.",
+    image: "https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 10,
+    name: "Iced Coffee",
+    category: "Drinks",
+    price: 399,
+    rating: "4.8",
+    description: "Cold coffee with a smooth finish.",
+    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 11,
+    name: "Chicken Steak",
+    category: "Main Course",
+    price: 1599,
+    rating: "4.9",
+    description: "Tender chicken steak with a savoury sauce.",
+    image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 12,
+    name: "French Fries",
+    category: "Burgers",
+    price: 299,
+    rating: "4.6",
+    description: "Golden fries with your favourite dip.",
+    image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80"
+  }
+];
+
+let selectedCategory = "All";
+let cart = [];
+
+const menuGrid = document.getElementById("menuGrid");
+const searchInput = document.getElementById("searchInput");
+const cartItems = document.getElementById("cartItems");
+const cartTotal = document.getElementById("cartTotal");
+
+function formatPrice(price) {
+  return "Rs. " + price.toLocaleString("en-PK");
+}
+
+function renderMenu() {
+  const searchTerm = searchInput.value.toLowerCase().trim();
+
+  const filtered = dishes.filter(dish => {
+    const matchesCategory =
+      selectedCategory === "All" ||
+      dish.category === selectedCategory;
+
+    const matchesSearch =
+      dish.name.toLowerCase().includes(searchTerm) ||
+      dish.description.toLowerCase().includes(searchTerm) ||
+      dish.category.toLowerCase().includes(searchTerm);
+
+    return matchesCategory && matchesSearch;
+  });
+
+  if (filtered.length === 0) {
+    menuGrid.innerHTML =
+      '<p class="empty-message">No dishes found. Try another search.</p>';
+    return;
+  }
+
+  menuGrid.innerHTML = filtered.map(dish => `
+    <article class="menu-card">
+      <img
+        src="${dish.image}"
+        alt="${dish.name}"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80';"
+      >
+      <div class="menu-info">
+        <span class="eyebrow">${dish.category}</span>
+        <h3>${dish.name}</h3>
+        <p>${dish.description}</p>
+        <div class="rating">★ ${dish.rating} / 5</div>
+        <div class="menu-bottom">
+          <span class="price">${formatPrice(dish.price)}</span>
+          <button class="add-btn" onclick="addToCart(${dish.id})">
+            + Add
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+function addToCart(id) {
+  const dish = dishes.find(item => item.id === id);
+  const existing = cart.find(item => item.id === id);
+
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({ ...dish, quantity: 1 });
+  }
+
+  renderCart();
+  document.getElementById("orderMessage").textContent = "";
+}
+
+function changeQuantity(id, amount) {
+  const item = cart.find(product => product.id === id);
+
+  if (!item) return;
+
+  item.quantity += amount;
+
+  if (item.quantity <= 0) {
+    cart = cart.filter(product => product.id !== id);
+  }
+
+  renderCart();
+}
+
+function renderCart() {
+  if (cart.length === 0) {
+    cartItems.innerHTML = "<p>Your cart is empty. Add a dish from the menu!</p>";
+  } else {
+    cartItems.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <div>
+          <strong>${item.name}</strong>
+          <p>${formatPrice(item.price)} × ${item.quantity}</p>
+        </div>
+        <div>
+          <button onclick="changeQuantity(${item.id}, -1)" aria-label="Decrease quantity">−</button>
+          <strong style="margin:0 8px">${item.quantity}</strong>
+          <button onclick="changeQuantity(${item.id}, 1)" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  cartTotal.textContent = formatPrice(total);
+}
+
+document.querySelectorAll(".filter-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    selectedCategory = button.dataset.category;
+    renderMenu();
+  });
+});
+
+searchInput.addEventListener("input", renderMenu);
+
+document.getElementById("orderBtn").addEventListener("click", () => {
+  const message = document.getElementById("orderMessage");
+
+  if (cart.length === 0) {
+    message.textContent = "Please add at least one dish first.";
+    return;
+  }
+
+  message.textContent =
+    "Demo only: your order has been previewed. Online ordering is not connected yet.";
+});
+
+document.getElementById("reservationForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const date = document.getElementById("bookingDate").value;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const chosenDate = new Date(date + "T00:00:00");
+
+  if (chosenDate < today) {
+    document.getElementById("reservationMessage").textContent =
+      "Please choose today or a future date.";
+    return;
+  }
+
+  document.getElementById("reservationMessage").textContent =
+    "Demo only: reservation details checked. No booking was sent to a restaurant.";
+});
+
+document.getElementById("bookingDate").min =
+  new Date().toLocaleDateString("en-CA");
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderMenu();
+renderCart();
+</script>
+
+</body>
+</html>
