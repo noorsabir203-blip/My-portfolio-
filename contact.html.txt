@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Maison Belle Salon for beauty service enquiries and appointment requests.">
+  <title>Contact Us | Maison Belle Salon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Maison <span>Belle.</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+    <a href="booking.html" class="btn">Book Now</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <p class="eyebrow">We'd love to hear from you</p>
+    <h1>Get in Touch</h1>
+    <p>Have a question about our services? We'd be happy to help.</p>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div>
+          <p class="eyebrow">Contact information</p>
+          <h2>Let's talk beauty.</h2>
+          <p>For this demo website, the details below are placeholders. Update them before using the website for a real salon.</p>
+
+          <div class="contact-detail">
+            <span class="detail-icon">⌖</span>
+            <div>
+              <h3>Visit Us</h3>
+              <p>Salon address goes here<br>Lahore, Pakistan</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <span class="detail-icon">☎</span>
+            <div>
+              <h3>Call Us</h3>
+              <p>Replace with the salon's real phone number.</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <span class="detail-icon">✉</span>
+            <div>
+              <h3>Email</h3>
+              <p>Replace with the salon's real email address.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hours-card">
+          <p class="eyebrow">Plan your visit</p>
+          <h2>Opening Hours</h2>
+          <div class="hours-row"><span>Monday – Friday</span><span>10 AM – 7 PM</span></div>
+          <div class="hours-row"><span>Saturday</span><span>10 AM – 8 PM</span></div>
+          <div class="hours-row"><span>Sunday</span><span>By appointment</span></div>
+          <p class="small-note">Sample hours only. Confirm the salon's actual schedule before publishing.</p>
+          <a href="booking.html" class="btn">Request an Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner">
+    <p class="eyebrow">Your beauty journey</p>
+    <h2>Something on your mind?</h2>
+    <p>Explore our services or send us an appointment request.</p>
+    <a href="services.html" class="btn">Explore Services</a>
+  </section>
+</main>
+
+<footer>
+  <h2>Maison Belle.</h2>
+  <p>Beauty • Confidence • Care</p>
+  <p>Demo salon website by NovaCode Studio</p>
+  <p><a href="about.html">About Us</a> · <a href="booking.html">Appointments</a></p>
+  <p>© 2026 Maison Belle Salon</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
