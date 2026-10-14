@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxe Beauty Salon</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff5f5;
+  color: #38252b;
+  text-align: center;
+}
+header {
+  background: #39232c;
+  color: white;
+  padding: 20px;
+}
+h1 { color: #f1b7c5; }
+.hero { padding: 55px 20px; }
+.hero img {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 15px;
+}
+h2 { color: #a54e70; }
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 200px;
+  box-shadow: 0 3px 12px #0001;
+}
+button {
+  background: #b65e7b;
+  color: white;
+  border: 0;
+  padding: 13px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+footer {
+  background: #39232c;
+  color: white;
+  padding: 22px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Luxe Beauty Salon</h1>
+  <p>Your Beauty, Our Priority ✨</p>
+</header>
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80"
+  alt="Beautiful salon interior">
+  <h2>Welcome to Luxury</h2>
+  <p>Feel beautiful. Feel confident.</p>
+  <a href="#contact">
+    <button>Book Appointment</button>
+  </a>
+</div>
+<h2>Our Services</h2>
+<div class="services">
+  <div class="card">
+    <h3>💆 Facial</h3>
+    <p>From Rs. 2,000</p>
+  </div>
+  <div class="card">
+    <h3>💇 Hair Styling</h3>
+    <p>From Rs. 1,500</p>
+  </div>
+  <div class="card">
+    <h3>💄 Makeup</h3>
+    <p>From Rs. 3,500</p>
+  </div>
+  <div class="card">
+    <h3>👰 Bridal Makeup</h3>
+    <p>From Rs. 15,000</p>
+  </div>
+</div>
+<div id="contact" style="padding:35px">
+  <h2>Book Your Visit</h2>
+  <p>Contact us to book your appointment.</p>
+  <button onclick="alert('Please add the salon WhatsApp number here!')">
+    Contact Us
+  </button>
+</div>
+<footer>
+  <p>© 2026 Luxe Beauty Salon</p>
+  <p>Beauty • Elegance • Care</p>
+</footer>
+</body>
+</html>
