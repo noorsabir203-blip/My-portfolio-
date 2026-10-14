@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a beauty appointment with Maison Belle Salon.">
+  <title>Book an Appointment | Maison Belle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Maison <span>Belle.</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="booking.html" class="btn" aria-current="page">Book Now</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <p class="eyebrow">Make time for yourself</p>
+    <h1>Book Your Visit</h1>
+    <p>Tell us what you have in mind and choose your preferred date.</p>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Appointment request</p>
+        <h2>Let's plan your beauty moment.</h2>
+        <p>Complete the form below to preview an appointment request.</p>
+      </div>
+
+      <form id="booking-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="full-name">Full Name *</label>
+            <input type="text" id="full-name" name="name" placeholder="Your name" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your contact number" required>
+          </div>
+
+          <div class="field">
+            <label for="service">Choose a Service *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option>Haircut & Styling</option>
+              <option>Hair Treatment</option>
+              <option>Makeup</option>
+              <option>Manicure & Pedicure</option>
+              <option>Skincare</option>
+              <option>Bridal Package</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="date">Preferred Date *</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+
+          <div class="field">
+            <label for="time">Preferred Time *</label>
+            <select id="time" name="time" required>
+              <option value="">Select a time</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>12:00 PM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>3:00 PM</option>
+              <option>4:00 PM</option>
+              <option>5:00 PM</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="email">Email (Optional)</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" placeholder="Tell us about your preferred style or any questions."></textarea>
+        </div>
+
+        <p class="form-note">Demo only: this form does not send or store your details. Your appointment is not confirmed.</p>
+
+        <button type="submit" class="btn">Preview Request</button>
+        <p id="booking-message" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <h2>Maison Belle.</h2>
+  <p>Beauty • Confidence • Care</p>
+  <p>Demo salon website by NovaCode Studio</p>
+  <p><a href="contact.html">Contact Us</a> · <a href="services.html">Our Services</a></p>
+  <p>© 2026 Maison Belle Salon</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
